@@ -1,0 +1,11 @@
+{
+  "agents": [
+    {
+      "name": "telephony-voice-agent",
+      "metadata": {
+        "phone_number": "+919999984076"
+      }
+    }
+  ]
+}
+

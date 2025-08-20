@@ -1,0 +1,7 @@
+{
+  "sip_trunk_id": "ST_xoNiDzrAWja2",
+  "sip_call_to": "+919999984076",
+  "room_name": "outbound-test-room",
+  "participant_identity": "outbound-caller",
+  "participant_name": "Outbound Test Call"
+}
