@@ -29,12 +29,21 @@ importers:
       '@livekit/rtc-node':
         specifier: ^0.13.18
         version: 0.13.18
+      '@types/ws':
+        specifier: ^8.18.1
+        version: 8.18.1
       dotenv:
         specifier: ^16.4.5
         version: 16.4.7
       livekit-server-sdk:
         specifier: ^2.13.2
         version: 2.13.2
+      openai:
+        specifier: ^5.13.1
+        version: 5.13.1(ws@8.18.3)(zod@3.24.2)
+      ws:
+        specifier: ^8.18.3
+        version: 8.18.3
       zod:
         specifier: ^3.23.8
         version: 3.24.2
@@ -418,6 +427,9 @@ packages:
 
   '@types/node@22.13.13':
     resolution: {integrity: sha512-ClsL5nMwKaBRwPcCvH8E7+nU4GxHVx1axNvMZTFHMEfNI7oahimt26P5zjVCRrjiIWj6YFXfE1v3dEp94wLcGQ==}
+
+  '@types/ws@8.18.1':
+    resolution: {integrity: sha512-ThVF6DCVhA8kUGy+aazFQ4kXQ7E1Ty7A3ypFOe0IcJV8O/M511G99AW24irKrW56Wt44yG9+ij8FaqoBGkuBXg==}
 
   '@typescript-eslint/eslint-plugin@8.28.0':
     resolution: {integrity: sha512-lvFK3TCGAHsItNdWZ/1FkvpzCxTHUVuFrdnOGLMa0GGCFIbCgQWVk3CzCGdA7kM3qGVc+dfW9tr0Z/sHnGDFyg==}
@@ -1384,6 +1396,18 @@ packages:
       zod:
         optional: true
 
+  openai@5.13.1:
+    resolution: {integrity: sha512-Jty97Apw40znKSlXZL2YDap1U2eN9NfXbqm/Rj1rExeOLEnhwezpKQ+v43kIqojavUgm30SR3iuvGlNEBR+AFg==}
+    hasBin: true
+    peerDependencies:
+      ws: ^8.18.0
+      zod: ^3.23.8
+    peerDependenciesMeta:
+      ws:
+        optional: true
+      zod:
+        optional: true
+
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
     engines: {node: '>= 0.8.0'}
@@ -1801,18 +1825,6 @@ packages:
   wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
 
-  ws@8.18.1:
-    resolution: {integrity: sha512-RKW2aJZMXeMxVpnZ6bck+RswznaxmzdULiBr6KY7XkTnW8uvt0iT9H5DkHUChXrc+uurzwa0rVI16n/Xzjdz1w==}
-    engines: {node: '>=10.0.0'}
-    peerDependencies:
-      bufferutil: ^4.0.1
-      utf-8-validate: '>=5.0.2'
-    peerDependenciesMeta:
-      bufferutil:
-        optional: true
-      utf-8-validate:
-        optional: true
-
   ws@8.18.3:
     resolution: {integrity: sha512-PEIGCY5tSlUt50cqyMXfCzX+oOPqN0vuGqWzbcJ2xvnkzkq46oOpz7dQaTDBdfICb4N14+GARUDw2XV2N4tvzg==}
     engines: {node: '>=10.0.0'}
@@ -2066,7 +2078,7 @@ snapshots:
     dependencies:
       '@livekit/agents': 0.7.9(@livekit/rtc-node@0.13.18)
       '@livekit/rtc-node': 0.13.18
-      ws: 8.18.1
+      ws: 8.18.3
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -2075,7 +2087,7 @@ snapshots:
     dependencies:
       '@livekit/agents': 0.7.9(@livekit/rtc-node@0.13.18)
       '@livekit/rtc-node': 0.13.18
-      ws: 8.18.1
+      ws: 8.18.3
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -2084,9 +2096,9 @@ snapshots:
     dependencies:
       '@livekit/agents': 0.7.9(@livekit/rtc-node@0.13.18)
       '@livekit/rtc-node': 0.13.18
-      openai: 4.86.1(ws@8.18.1)(zod@3.24.2)
+      openai: 4.86.1(ws@8.18.3)(zod@3.24.2)
       sharp: 0.33.5
-      ws: 8.18.1
+      ws: 8.18.3
     transitivePeerDependencies:
       - bufferutil
       - encoding
@@ -2098,7 +2110,7 @@ snapshots:
       '@livekit/agents': 0.7.9(@livekit/rtc-node@0.13.18)
       '@livekit/rtc-node': 0.13.18
       onnxruntime-node: 1.21.0
-      ws: 8.18.1
+      ws: 8.18.3
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -2201,6 +2213,10 @@ snapshots:
   '@types/node@22.13.13':
     dependencies:
       undici-types: 6.20.0
+
+  '@types/ws@8.18.1':
+    dependencies:
+      '@types/node': 22.13.13
 
   '@typescript-eslint/eslint-plugin@8.28.0(@typescript-eslint/parser@8.14.0(eslint@8.57.1)(typescript@5.8.2))(eslint@8.57.1)(typescript@5.8.2)':
     dependencies:
@@ -3261,7 +3277,7 @@ snapshots:
       onnxruntime-common: 1.21.0
       tar: 7.4.3
 
-  openai@4.86.1(ws@8.18.1)(zod@3.24.2):
+  openai@4.86.1(ws@8.18.3)(zod@3.24.2):
     dependencies:
       '@types/node': 18.19.83
       '@types/node-fetch': 2.6.12
@@ -3271,10 +3287,15 @@ snapshots:
       formdata-node: 4.4.1
       node-fetch: 2.7.0
     optionalDependencies:
-      ws: 8.18.1
+      ws: 8.18.3
       zod: 3.24.2
     transitivePeerDependencies:
       - encoding
+
+  openai@5.13.1(ws@8.18.3)(zod@3.24.2):
+    optionalDependencies:
+      ws: 8.18.3
+      zod: 3.24.2
 
   optionator@0.9.4:
     dependencies:
@@ -3779,8 +3800,6 @@ snapshots:
       strip-ansi: 7.1.0
 
   wrappy@1.0.2: {}
-
-  ws@8.18.1: {}
 
   ws@8.18.3: {}
 

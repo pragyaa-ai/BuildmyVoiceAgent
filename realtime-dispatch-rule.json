@@ -2,15 +2,14 @@
   "dispatch_rule": {
     "rule": {
       "dispatchRuleIndividual": {
-        "roomPrefix": "call-"
+        "roomPrefix": "realtime-call-"
       }
     },
     "trunks": ["ST_GXUugFcK6yVU"],
     "roomConfig": {
       "agents": [{
-        "agentName": "telephony-voice-agent"
+        "agentName": "realtime-voice-agent"
       }]
     }
   }
 }
-

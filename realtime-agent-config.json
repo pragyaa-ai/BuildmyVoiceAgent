@@ -1,0 +1,50 @@
+{
+  "scenarios": {
+    "simpleExample": {
+      "name": "Simple Example (Greeter → Haiku)",
+      "description": "Basic handoff demonstration with greeter and haiku writer agents",
+      "greeting": "Hello! I'm your AI assistant. Would you like me to write you a beautiful haiku?",
+      "systemMessage": "You are a friendly greeter agent. Your role is to: 1. Greet the user warmly 2. Ask if they'd like a haiku 3. If yes, transfer them to the haiku writer agent 4. Keep responses short and conversational for voice interaction",
+      "agents": ["greeter", "haikuWriter"],
+      "tools": [
+        {
+          "name": "transferToHaikuWriter",
+          "description": "Transfer user to haiku writer agent for creating poetry"
+        }
+      ]
+    },
+    "customerServiceRetail": {
+      "name": "Customer Service Retail",
+      "description": "Complete customer service flow with authentication, returns, sales, and escalation",
+      "greeting": "Welcome to our customer service! I'm here to help you with returns, new purchases, or any questions you have. How can I assist you today?",
+      "systemMessage": "You are a customer service agent. Your role is to: 1. Authenticate the user if needed for sensitive operations 2. Help with returns, exchanges, and refunds 3. Assist with new purchases and product information 4. Escalate complex issues to human agents when needed 5. Keep responses professional and helpful for voice interaction",
+      "agents": ["authentication", "returns", "sales", "simulatedHuman"],
+      "tools": [
+        {
+          "name": "authenticateUser",
+          "description": "Authenticate user for sensitive operations"
+        },
+        {
+          "name": "checkReturnEligibility", 
+          "description": "Check if item is eligible for return using reasoning model"
+        },
+        {
+          "name": "escalateToHuman",
+          "description": "Escalate complex issues to human agent"
+        }
+      ]
+    }
+  },
+  "escalationModels": {
+    "gpt-4o-mini": {
+      "name": "GPT-4o-mini",
+      "description": "Faster, cost-effective reasoning model",
+      "capabilities": ["basic reasoning", "return eligibility", "policy checks"]
+    },
+    "gpt-4o": {
+      "name": "GPT-4o", 
+      "description": "More capable reasoning model",
+      "capabilities": ["complex reasoning", "nuanced decisions", "advanced problem solving"]
+    }
+  }
+}
